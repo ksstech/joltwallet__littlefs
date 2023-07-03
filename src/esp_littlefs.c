@@ -642,7 +642,6 @@ static esp_err_t esp_littlefs_init(const esp_vfs_littlefs_conf_t* conf)
     // Mount and Error Check
     _efs[index] = efs;
     if(!conf->dont_mount){
-        ets_printf("[%s:%d] ",__FUNCTION__, __LINE__);int res = lfs_mount(efs->fs, &efs->cfg);
 
         if (conf->format_if_mount_failed && res != LFS_ERR_OK) {
             esp_err_t err;
